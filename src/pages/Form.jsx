@@ -83,7 +83,7 @@ const Form = () => {
                 </div>
               </div>
               <div className="card-action">
-                <button className="btn btn-success">Submit</button>
+                <button className="btn btn-success me-2">Submit</button>
                 <button className="btn btn-danger">Cancel</button>
               </div>
             </div>
