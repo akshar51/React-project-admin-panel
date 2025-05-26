@@ -58,6 +58,27 @@ const Form = () => {
                       <label htmlFor="product_Image">Product Image :</label>
                       <input type="file" className="form-control" id="product_image" placeholder="Enter product image" />
                     </div>
+                    <div className='form-group'>
+                        <label className="form-check-label" htmlFor="godown">Godown : </label>
+                        <div className="form-check-inline">
+                            <input className="form-check-input" type="checkbox"  id="" />
+                            <label className="form-check-label ms-1" htmlFor="">
+                            Surat
+                        </label>
+                    </div>
+                    <div className="form-check-inline">
+                            <input className="form-check-input" type="checkbox"  id=""  />
+                            <label className="form-check-label ms-1" htmlFor="">
+                         Navsari
+                            </label>
+                    </div>
+                    <div className="form-check-inline">
+                            <input className="form-check-input" type="checkbox"  id=""  />
+                            <label className="form-check-label ms-1" htmlFor="">
+                         Bardoli
+                            </label>
+                    </div>
+                    </div>
                   </div>
                 </div>
               </div>
