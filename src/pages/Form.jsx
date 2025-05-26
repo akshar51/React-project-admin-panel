@@ -79,6 +79,10 @@ const Form = () => {
                             </label>
                     </div>
                     </div>
+                    <div className="form-group">
+                      <label htmlFor="description">Description :</label>
+                      <textarea className="form-control" id="description" />
+                    </div>
                   </div>
                 </div>
               </div>
