@@ -47,8 +47,16 @@ const Form = () => {
                 <div className="row">
                   <div className="col-md-6 col-lg-4">
                     <div className="form-group">
-                      <label htmlFor="email2">Email Address</label>
-                      <input type="email" className="form-control" id="email2" placeholder="Enter Email" />
+                      <label htmlFor="product_name">Product Name :</label>
+                      <input type="text" className="form-control" id="product_name" placeholder="Enter product name" />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="product_name">Product Name :</label>
+                      <input type="text" className="form-control" id="product_name" placeholder="Enter product name" />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="product_Image">Product Image :</label>
+                      <input type="file" className="form-control" id="product_image" placeholder="Enter product image" />
                     </div>
                   </div>
                 </div>
