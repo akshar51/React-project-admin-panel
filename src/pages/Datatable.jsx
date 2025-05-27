@@ -3,7 +3,8 @@ import Sidebar from '../components/Sidebar'
 import Navbar from '../components/Navbar'
 import '../assets/script'
 
-const Datatable = () => {
+const Datatable = ({list,handleDelete}) => {
+
   return (
     <>
       <div className="wrapper">
@@ -107,21 +108,52 @@ const Datatable = () => {
                   <table id="add-row" className="display table table-striped table-hover">
                     <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th style={{width: '10%'}}>Action</th>
+                        <th>Sr No.</th>
+                        <th>Product-Image</th>
+                        <th>Product</th>
+                        <th>Stock</th>
+                        <th>Godown</th>
+                        <th>Description</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tfoot>
                       <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
+                        <th>Sr No.</th>
+                        <th>Product-Image</th>
+                        <th>Product</th>
+                        <th>Stock</th>
+                        <th>Godown</th>
+                        <th>Description</th>
                         <th>Action</th>
                       </tr>
                     </tfoot>
-                    <tbody></tbody>
+                    <tbody>
+                      {
+                        list.map((item,idx)=>{
+                          return(
+                            <tr key={item.id}>
+                              <td>{idx + 1}</td>
+                              <td>
+                                <img
+                                className='rounded-circle' 
+                                src={item.product_image ? item.product_image.url : ""} 
+                                alt={item.product_image ? item.product_image.name : ""}
+                                style={{width:"70px"}}/>
+                              </td>
+                              <td>{item.product_name}</td>
+                              <td>{item.product_stock}</td>
+                              <td>{item.godown ? item.godown.toString() : []}</td>
+                              <td>{item.description}</td>
+                              <td>
+                                <button className='btn btn-warning me-1 text-white'>Edit</button>
+                                <button className='btn btn-danger' onClick={()=>handleDelete(item.id)}>Delete</button>
+                              </td>
+                            </tr>
+                          )
+                        })
+                      }
+                    </tbody>
                   </table>
                 </div>
               </div>

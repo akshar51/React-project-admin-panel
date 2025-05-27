@@ -3,8 +3,7 @@ import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 
 const Form = (props) => {
-
-  let {handleChange,handleSubmit,product} = props;
+  let { handleChange, handleSubmit, product } = props;
 
   return (
     <>
@@ -42,122 +41,130 @@ const Form = (props) => {
               </div>
               <div className="row">
                 <div className="col-md-12">
-                  <div className="card">
-                    <div className="card-header">
-                      <div className="card-title">Form Elements</div>
-                    </div>
-                    <div className="card-body">
-                      <div className="row">
-                        <div className="col-md-6 col-lg-4">
-                          <div className="form-group">
-                            <label htmlFor="product_name">Product Name :</label>
-                            <input
-                              type="text"
-                              className="form-control"
-                              id="product_name"
-                              placeholder="Enter product name"
-                              name="product_name"
-                              onChange={handleChange}
-                              value={product.product_name || ""}
-                            />
-                          </div>
-                          <div className="form-group">
-                            <label htmlFor="product_stock">
-                              Product Stock :
-                            </label>
-                            <input
-                              type="text"
-                              className="form-control"
-                              id="product_stock"
-                              placeholder="Enter product stock"
-                              name="product_stock"
-                              onChange={handleChange}
-                              value={product.product_stock || ""}
-                            />
-                          </div>
-                          <div className="form-group">
-                            <label htmlFor="product_Image">
-                              Product Image :
-                            </label>
-                            <input
-                              type="file"
-                              className="form-control"
-                              id="product_image"
-                              placeholder="Add product image"
-                              name="product_image"
-                            />
-                          </div>
-                          <div className="form-group">
-                            <label
-                              className="form-check-label"
-                              htmlFor="godown"
-                            >
-                              Godown :{" "}
-                            </label>
-                            <div className="form-check-inline">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                id="surat"
-                                name="godown"
-                                value="Surat"
-                              />
-                              <label
-                                className="form-check-label ms-1"
-                                htmlFor="surat"
-                              >
-                                Surat
+                  <form method="post" onSubmit={handleSubmit}>
+                    <div className="card">
+                      <div className="card-header">
+                        <div className="card-title">Form Elements</div>
+                      </div>
+                      <div className="card-body">
+                        <div className="row">
+                          <div className="col-md-6 col-lg-4">
+                            <div className="form-group">
+                              <label htmlFor="product_name">
+                                Product Name :
                               </label>
-                            </div>
-                            <div className="form-check-inline">
                               <input
-                                className="form-check-input"
-                                type="checkbox"
-                                id="navsari"
-                                name="godown"
-                                value="Navsari"
+                                type="text"
+                                className="form-control"
+                                id="product_name"
+                                placeholder="Enter product name"
+                                name="product_name"
+                                onChange={handleChange}
+                                value={product.product_name || ""}
                               />
-                              <label
-                                className="form-check-label ms-1"
-                                htmlFor="navsari"
-                              >
-                                Navsari
-                              </label>
                             </div>
-                            <div className="form-check-inline">
+                            <div className="form-group">
+                              <label htmlFor="product_stock">
+                                Product Stock :
+                              </label>
                               <input
-                                className="form-check-input"
-                                type="checkbox"
-                                id="bardoli"
-                                name="godown"
-                                value="Bardoli"
+                                type="text"
+                                className="form-control"
+                                id="product_stock"
+                                placeholder="Enter product stock"
+                                name="product_stock"
+                                onChange={handleChange}
+                                value={product.product_stock || ""}
                               />
-                              <label
-                                className="form-check-label ms-1"
-                                htmlFor="bardoli"
-                              >
-                                Bardoli
-                              </label>
                             </div>
-                          </div>
-                          <div className="form-group">
-                            <label htmlFor="description">Description :</label>
-                            <textarea
-                              className="form-control"
-                              id="description"
-                              name="description"
-                              value={product.description || ""}
-                              onChange={handleChange}
-                            />
+                            <div className="form-group">
+                              <label htmlFor="product_Image">
+                                Product Image :
+                              </label>
+                              <input
+                                type="file"
+                                className="form-control"
+                                id="product_image"
+                                placeholder="Add product image"
+                                name="product_image"
+                                onChange={handleChange}
+                              />
+                            </div>
+                            <div className="form-group">
+                              <label
+                                className="form-check-label"
+                                htmlFor="godown"
+                              >
+                                Godown :{" "}
+                              </label>
+                              <div className="form-check-inline">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  id="surat"
+                                  name="godown"
+                                  value="Surat"
+                                  onChange={handleChange}
+                                />
+                                <label
+                                  className="form-check-label ms-1"
+                                  htmlFor="surat"
+                                >
+                                  Surat
+                                </label>
+                              </div>
+                              <div className="form-check-inline">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  id="navsari"
+                                  name="godown"
+                                  value="Navsari"
+                                  onChange={handleChange}
+                                />
+                                <label
+                                  className="form-check-label ms-1"
+                                  htmlFor="navsari"
+                                >
+                                  Navsari
+                                </label>
+                              </div>
+                              <div className="form-check-inline">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  id="bardoli"
+                                  name="godown"
+                                  value="Bardoli"
+                                  onChange={handleChange}
+                                />
+                                <label
+                                  className="form-check-label ms-1"
+                                  htmlFor="bardoli"
+                                >
+                                  Bardoli
+                                </label>
+                              </div>
+                            </div>
+                            <div className="form-group">
+                              <label htmlFor="description">Description :</label>
+                              <textarea
+                                className="form-control"
+                                id="description"
+                                name="description"
+                                value={product.description || ""}
+                                onChange={handleChange}
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
+                      <div className="card-action">
+                        <button className="btn btn-success me-2">Submit</button>
+                        <button className="btn btn-danger">Cancel</button>
+                      </div>
                     </div>
-                    <div className="card-action">
-                      <button className="btn btn-success me-2">Submit</button>
-                      <button className="btn btn-danger">Cancel</button>
-                    </div>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>
