@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Home from './pages/Home'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import Form from './pages/Form'
@@ -12,6 +12,12 @@ const App = () => {
   const [editId,setEditId] = useState(-1)
   const navigate = useNavigate();
 
+
+  useEffect(() => {
+    let oldData = JSON.parse(localStorage.getItem("product")) || [];
+    setList(oldData)
+  }, []);
+  
 
   const handleChange = (e)=>{
     let {name,value,checked,files} = e.target;
@@ -51,6 +57,7 @@ const App = () => {
     if(editId == -1){
       let data = [...list,{...product,id: Date.now()}];
       setList(data);
+      localStorage.setItem("product",JSON.stringify(data))
     }
     else{
       let data = list.map((item)=>{
@@ -60,8 +67,9 @@ const App = () => {
         return item;
       })
       setList(data);
-      setEditId(-1)
+      localStorage.setItem("product",JSON.stringify(data))
     }
+      setEditId(-1)
     setProduct({})
     setGodown([])
     navigate('/datatable')
@@ -70,6 +78,7 @@ const App = () => {
   const handleDelete = (id)=>{
     let data = list.filter((item)=>item.id != id)
     setList(data);
+    localStorage.setItem("product",JSON.stringify(data))
   }
 
   const handleEdit = (id)=>{
