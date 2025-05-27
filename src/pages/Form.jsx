@@ -68,7 +68,7 @@ const Form = (props) => {
                                 Product Stock :
                               </label>
                               <input
-                                type="text"
+                                type="number"
                                 className="form-control"
                                 id="product_stock"
                                 placeholder="Enter product stock"
