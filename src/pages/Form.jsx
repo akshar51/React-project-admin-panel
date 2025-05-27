@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 
 const Form = (props) => {
-  let { handleChange, handleSubmit, product } = props;
+  let { handleChange, handleSubmit, product,godown } = props;
 
   return (
     <>
@@ -105,6 +105,7 @@ const Form = (props) => {
                                   name="godown"
                                   value="Surat"
                                   onChange={handleChange}
+                                  checked={godown.includes("Surat")?true : false}
                                 />
                                 <label
                                   className="form-check-label ms-1"
@@ -121,6 +122,7 @@ const Form = (props) => {
                                   name="godown"
                                   value="Navsari"
                                   onChange={handleChange}
+                                  checked={godown.includes("Navsari")?true : false}
                                 />
                                 <label
                                   className="form-check-label ms-1"
@@ -137,6 +139,7 @@ const Form = (props) => {
                                   name="godown"
                                   value="Bardoli"
                                   onChange={handleChange}
+                                  checked={godown.includes("Bardoli")?true : false}
                                 />
                                 <label
                                   className="form-check-label ms-1"

@@ -45,9 +45,24 @@ const App = () => {
 
   const handleSubmit = (e)=>{
     e.preventDefault();
-    let data = [...list,{...product,id: Date.now()}];
-    setList(data);
+
+    if(editId == -1){
+      let data = [...list,{...product,id: Date.now()}];
+      setList(data);
+    }
+    else{
+      let data = list.map((item)=>{
+        if(item.id == editId){
+          return {...product , id : editId}
+        }
+        return item;
+      })
+      setList(data);
+      setEditId(-1)
+    }
+
     setProduct({})
+    setGodown([])
   }
   
   const handleDelete = (id)=>{
@@ -69,7 +84,8 @@ const App = () => {
       <Route path='/form' element={
         <Form handleChange = {handleChange} 
         handleSubmit = {handleSubmit}
-        product = {product}/>
+        product = {product}
+        godown={godown}/>
         }/>
       <Route path='/datatable' element={
         <Datatable 

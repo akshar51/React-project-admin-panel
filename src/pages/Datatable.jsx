@@ -146,7 +146,7 @@ const Datatable = ({list,handleDelete}) => {
                               <td>{item.godown ? item.godown.toString() : []}</td>
                               <td>{item.description}</td>
                               <td>
-                                <button className='btn btn-warning me-1 text-white'>Edit</button>
+                                <button className='btn btn-warning me-1 text-white' onClick={()=>handleEdit(item.id)}>Edit</button>
                                 <button className='btn btn-danger' onClick={()=>handleDelete(item.id)}>Delete</button>
                               </td>
                             </tr>
