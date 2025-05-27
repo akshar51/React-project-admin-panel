@@ -3,7 +3,7 @@ import Sidebar from '../components/Sidebar'
 import Navbar from '../components/Navbar'
 import '../assets/script'
 
-const Datatable = ({list,handleDelete}) => {
+const Datatable = ({list,handleDelete,handleEdit}) => {
 
   return (
     <>

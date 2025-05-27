@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Home from './pages/Home'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import Form from './pages/Form'
 import Datatable from './pages/Datatable'
 
@@ -10,6 +10,8 @@ const App = () => {
   const [list, setList] = useState([]);
   const [godown, setGodown] = useState([]);
   const [editId,setEditId] = useState(-1)
+  const navigate = useNavigate();
+
 
   const handleChange = (e)=>{
     let {name,value,checked,files} = e.target;
@@ -60,9 +62,9 @@ const App = () => {
       setList(data);
       setEditId(-1)
     }
-
     setProduct({})
     setGodown([])
+    navigate('/datatable')
   }
   
   const handleDelete = (id)=>{
@@ -71,9 +73,11 @@ const App = () => {
   }
 
   const handleEdit = (id)=>{
-    let data = list.filter((item)=>item.id === id);
+    let data = list.filter((item)=>item.id === id)[0];
     setProduct(data);
     setEditId(id)
+    setGodown(data.godown)
+    navigate('/form')
   }
 
 
@@ -90,7 +94,8 @@ const App = () => {
       <Route path='/datatable' element={
         <Datatable 
         list={list}
-        handleDelete={handleDelete}/>
+        handleDelete={handleDelete}
+        handleEdit={handleEdit}/>
         }/>
     </Routes>
     </>
