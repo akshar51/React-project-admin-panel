@@ -2,7 +2,10 @@ import React from "react";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 
-const Form = () => {
+const Form = (props) => {
+
+  let {handleChange,handleSubmit,product} = props;
+
   return (
     <>
       <div className="wrapper">
@@ -54,6 +57,8 @@ const Form = () => {
                               id="product_name"
                               placeholder="Enter product name"
                               name="product_name"
+                              onChange={handleChange}
+                              value={product.product_name || ""}
                             />
                           </div>
                           <div className="form-group">
@@ -66,6 +71,8 @@ const Form = () => {
                               id="product_stock"
                               placeholder="Enter product stock"
                               name="product_stock"
+                              onChange={handleChange}
+                              value={product.product_stock || ""}
                             />
                           </div>
                           <div className="form-group">
@@ -139,6 +146,8 @@ const Form = () => {
                               className="form-control"
                               id="description"
                               name="description"
+                              value={product.description || ""}
+                              onChange={handleChange}
                             />
                           </div>
                         </div>
