@@ -50,7 +50,7 @@ const Form = (props) => {
                         <div className="row">
                           <div className="col-md-6 col-lg-4">
                             <div className="form-group">
-                              <label htmlFor="product_name">
+                              <label htmlFor="product_name" className="fw-bold">
                                 Product Name :
                               </label>
                               <input
@@ -64,7 +64,7 @@ const Form = (props) => {
                               />
                             </div>
                             <div className="form-group">
-                              <label htmlFor="product_stock">
+                              <label htmlFor="product_stock" className="fw-bold">
                                 Product Stock :
                               </label>
                               <input
@@ -78,7 +78,7 @@ const Form = (props) => {
                               />
                             </div>
                             <div className="form-group">
-                              <label htmlFor="product_Image">
+                              <label htmlFor="product_Image" className="fw-bold">
                                 Product Image :
                               </label>
                               <input
@@ -92,7 +92,7 @@ const Form = (props) => {
                             </div>
                             <div className="form-group">
                               <label
-                                className="form-check-label"
+                                className="form-check-label fw-bold"
                                 htmlFor="godown"
                               >
                                 Godown :{" "}
@@ -150,7 +150,7 @@ const Form = (props) => {
                               </div>
                             </div>
                             <div className="form-group">
-                              <label htmlFor="description">Description :</label>
+                              <label htmlFor="description" className="fw-bold">Description :</label>
                               <textarea
                                 className="form-control"
                                 id="description"
