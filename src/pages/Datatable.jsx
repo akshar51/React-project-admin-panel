@@ -105,12 +105,13 @@ const Datatable = ({list,handleDelete,handleEdit}) => {
                   </div>
                 </div>
                 <div className="table-responsive">
-                  <table id="add-row" className="display table table-striped table-hover">
+                  <table id="add-row" className="display table table-striped table-hover table-responsive">
                     <thead>
                       <tr>
                         <th>Sr No.</th>
                         <th>Product-Image</th>
                         <th>Product</th>
+                        <th>Price</th>
                         <th>Stock</th>
                         <th>Godown</th>
                         <th>Description</th>
@@ -122,6 +123,7 @@ const Datatable = ({list,handleDelete,handleEdit}) => {
                         <th>Sr No.</th>
                         <th>Product-Image</th>
                         <th>Product</th>
+                        <th>Price</th>
                         <th>Stock</th>
                         <th>Godown</th>
                         <th>Description</th>
@@ -142,6 +144,7 @@ const Datatable = ({list,handleDelete,handleEdit}) => {
                                 style={{width:"70px"}}/>
                               </td>
                               <td>{item.product_name}</td>
+                              <td>{item.product_price}</td>
                               <td>{item.product_stock}</td>
                               <td>{item.godown ? item.godown.toString() : []}</td>
                               <td>{item.description}</td>

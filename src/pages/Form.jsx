@@ -67,6 +67,23 @@ const Form = (props) => {
                               }
                             </div>
                             <div className="form-group">
+                              <label htmlFor="product_price" className="fw-bold">
+                                Product Price :
+                              </label>
+                              <input
+                                type="number"
+                                className="form-control"
+                                id="product_price"
+                                placeholder="Enter product price"
+                                name="product_price"
+                                onChange={handleChange}
+                                value={product.product_price || ""}
+                              />
+                              {
+                                error.product_price && <span className="text-danger fw-bold">{error.product_price}</span>
+                              }
+                            </div>
+                            <div className="form-group">
                               <label htmlFor="product_stock" className="fw-bold">
                                 Product Stock :
                               </label>
