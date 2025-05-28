@@ -97,9 +97,10 @@ const App = () => {
     if(!product.product_name) error.product_name = "Product name is required"
     if(!product.product_stock) error.product_stock = "Product stock is required"
     if(!product.product_image) error.product_image = "Product image is required"
-    if(!product.godown) error.godown = "Godown is required"
+    if(!product.godown || product.godown.length === 0) error.godown = "Godown is required"
     if(!product.description) error.description = "Description is required"
     setError(error)
+    console.log(error)
     return Object.keys(error).length === 0      
   }
 

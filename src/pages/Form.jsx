@@ -157,6 +157,9 @@ const Form = (props) => {
                                   Bardoli
                                 </label>
                               </div>
+                              {
+                                error.godown && <span className="text-danger fw-bold">{error.godown}</span>
+                              }
                             </div>
                             <div className="form-group">
                               <label htmlFor="description" className="fw-bold">Description :</label>
