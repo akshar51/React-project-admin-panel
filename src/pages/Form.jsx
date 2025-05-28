@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 
 const Form = (props) => {
-  let { handleChange, handleSubmit, product,godown } = props;
+  let { handleChange, handleSubmit, product,godown,error } = props;
 
   return (
     <>
@@ -62,6 +62,9 @@ const Form = (props) => {
                                 onChange={handleChange}
                                 value={product.product_name || ""}
                               />
+                              {
+                                error.product_name && <span className="text-danger fw-bold">{error.product_name}</span>
+                              }
                             </div>
                             <div className="form-group">
                               <label htmlFor="product_stock" className="fw-bold">
@@ -76,6 +79,9 @@ const Form = (props) => {
                                 onChange={handleChange}
                                 value={product.product_stock || ""}
                               />
+                              {
+                                error.product_stock && <span className="text-danger fw-bold">{error.product_stock}</span>
+                              }
                             </div>
                             <div className="form-group">
                               <label htmlFor="product_Image" className="fw-bold">
@@ -89,6 +95,9 @@ const Form = (props) => {
                                 name="product_image"
                                 onChange={handleChange}
                               />
+                              {
+                                error.product_image && <span className="text-danger fw-bold">{error.product_image}</span>
+                              }
                             </div>
                             <div className="form-group">
                               <label
@@ -158,6 +167,9 @@ const Form = (props) => {
                                 value={product.description || ""}
                                 onChange={handleChange}
                               />
+                              {
+                                error.description && <span className="text-danger fw-bold">{error.description}</span>
+                              }
                             </div>
                           </div>
                         </div>

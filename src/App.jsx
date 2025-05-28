@@ -9,7 +9,8 @@ const App = () => {
   const [product, setProduct] = useState({});
   const [list, setList] = useState([]);
   const [godown, setGodown] = useState([]);
-  const [editId,setEditId] = useState(-1)
+  const [editId,setEditId] = useState(-1);
+  const [error,setError] = useState({});
   const navigate = useNavigate();
 
 
@@ -54,6 +55,8 @@ const App = () => {
   const handleSubmit = (e)=>{
     e.preventDefault();
 
+    if(!Validation()) return;
+
     if(editId == -1){
       let data = [...list,{...product,id: Date.now()}];
       setList(data);
@@ -69,7 +72,7 @@ const App = () => {
       setList(data);
       localStorage.setItem("product",JSON.stringify(data))
     }
-      setEditId(-1)
+    setEditId(-1)
     setProduct({})
     setGodown([])
     navigate('/datatable')
@@ -89,6 +92,17 @@ const App = () => {
     navigate('/form')
   }
 
+  const Validation = ()=>{
+    let error = {}
+    if(!product.product_name) error.product_name = "Product name is required"
+    if(!product.product_stock) error.product_stock = "Product stock is required"
+    if(!product.product_image) error.product_image = "Product image is required"
+    if(!product.godown) error.godown = "Godown is required"
+    if(!product.description) error.description = "Description is required"
+    setError(error)
+    return Object.keys(error).length === 0      
+  }
+
 
   return (
     <>
@@ -98,7 +112,8 @@ const App = () => {
         <Form handleChange = {handleChange} 
         handleSubmit = {handleSubmit}
         product = {product}
-        godown={godown}/>
+        godown={godown}
+        error={error}/>
         }/>
       <Route path='/datatable' element={
         <Datatable 
